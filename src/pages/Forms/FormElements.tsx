@@ -3,8 +3,17 @@ import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import PageMeta from "../../components/common/PageMeta";
 import PatientHistory from "./components/patientHistory";
 
+interface Patient {
+  id: number;
+  name: string;
+  age: number;
+  registrationDate: string;
+  lastConsultation: string;
+  avatar: string;
+}
+
 export default function FormElements() {
-  const [selectedPatient, setSelectedPatient] = useState(null);
+  const [selectedPatient, setSelectedPatient] = useState<Patient | null>(null);
 
   const patients = [
     { id: 1, name: "María García", age: 34, registrationDate: "15/03/2023", lastConsultation: "22/05/2023", avatar: "MG" },

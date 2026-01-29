@@ -54,7 +54,9 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({ imageUrl, onSave, 
     // Clear canvas and redraw image
     const image = new Image();
     image.src = imageUrl;
-    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    if (canvas) {
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    }
 
     // Set drawing style
     context.strokeStyle = '#FFEB3B';

@@ -3,6 +3,10 @@ import axios from "axios";
 import { DrawingCanvas } from "./DrawingCanvas";
 import { Modal } from "../../../components/ui/modal";
 
+interface ImageData {
+  imageUrl: string;
+}
+
 interface TomographyProps {
   tomography: {
     title: string;

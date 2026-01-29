@@ -2,8 +2,28 @@ import { useState } from "react";
 import PageBreadcrumb from "../../../components/common/PageBreadCrumb";
 import TomographyView from "./tomographyView";
 
-export default function PatientHistory({ patient, onBack }) {
-    const [selectedTomography, setSelectedTomography] = useState(null);
+interface Patient {
+  id: number;
+  name: string;
+  age: number;
+  registrationDate: string;
+  lastConsultation: string;
+  avatar: string;
+}
+
+interface Tomography {
+  title: string;
+  date: string;
+  description: string;
+}
+
+interface PatientHistoryProps {
+  patient: Patient;
+  onBack: () => void;
+}
+
+export default function PatientHistory({ patient, onBack }: PatientHistoryProps) {
+    const [selectedTomography, setSelectedTomography] = useState<Tomography | null>(null);
 
     if (selectedTomography) {
         return <TomographyView tomography={selectedTomography} onBack={() => setSelectedTomography(null)} />;
