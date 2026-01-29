@@ -80,7 +80,8 @@ export default function SignInForm() {
               </div>
 
               <button 
-              onClick={handleLogin}
+                type="button"
+                onClick={handleLogin}
                 className="w-full bg-[#009975] hover:bg-[#e98232] text-white font-semibold py-3 rounded-md transition-colors"
               >
                 Iniciar Sesión
