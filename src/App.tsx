@@ -34,7 +34,7 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route path="/ChatBot" element={<ChatBot />} />
           <Route element={<AppLayout />}>
-            <Route index path="/home" element={<Home />} />
+            <Route path="/home" element={<Home />} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
